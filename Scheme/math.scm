@@ -12,7 +12,7 @@
 
 (define (fact a) ; returns a!
         (if (= a 0) 1
-            (+ a (fact (- a 1)))
+            (* a (fact (- a 1)))
         )
 )
 
