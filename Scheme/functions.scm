@@ -65,11 +65,21 @@
 )
 
 ; Filter
-(define (filter f L)
+(define (filter P L)
         (if (null? L) L
-            (if (f (car L))
-                (cons (car L) (filter f (cdr L)))
-                (filter f (cdr L))
+            (if (P (car L))
+                (cons (car L) (filter P (cdr L)))
+                (filter P (cdr L))
+            )
+        )
+)
+
+; Reject (opposite of filter)
+(define (reject P L)
+        (if (null? L) L
+            (if (P (car L))
+                (reject P (cdr L))
+                (cons (car L) (reject P (cdr L)))
             )
         )
 )
