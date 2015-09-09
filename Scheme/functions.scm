@@ -246,3 +246,11 @@
 
 ; Odd?
 (define (odd? x) (not (even? x)))
+
+
+;----------------- Misc -------------------;
+;Lambda
+(define (fun a b) (lambda (x) (a + b + x)))
+
+; To Call
+; ( (fun 1 2) 3) => 6
